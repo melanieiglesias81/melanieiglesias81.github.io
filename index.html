@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name · System Quality Assurance Engineer</title>
+<meta name="description" content="SQA engineer with 8 years of experience in test design, automation, UAT, release planning and production verification.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef1f4; --surface:#ffffff; --ink:#14202b; --muted:#506070; --line:#cfd7df;
+  --pass:#1b7f55; --fail:#c0392b; --warn:#b7791f;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --bg:#10161c; --surface:#18212a; --ink:#e8edf2; --muted:#9aabba; --line:#2b3947; --pass:#4cc38a; --fail:#ef6f60; --warn:#e3a94a; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "IBM Plex Sans",system-ui,sans-serif}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--pass);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:700;letter-spacing:-.02em;max-width:14em}
+h2{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:700;letter-spacing:-.01em;margin-bottom:1.5rem}
+h3{font-size:1.2rem;font-weight:500;margin-bottom:.4rem}
+p{margin:0 0 1rem;max-width:42rem}
+nav{display:flex;gap:1.5rem;flex-wrap:wrap;padding:1.25rem 0;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+nav .me{margin-right:auto;color:var(--ink);font-family:"Bricolage Grotesque",sans-serif;font-weight:700}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:center;padding:3.5rem 0 4.5rem}
+.hero p.lead{font-size:1.2rem;color:var(--muted);margin-top:1.25rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.75rem}
+.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:6px;border:1.5px solid var(--ink);text-decoration:none;font-weight:500}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.run{background:var(--surface);border:1px solid var(--line);border-radius:8px;font:400 .86rem/1.5 "IBM Plex Mono",monospace;overflow:hidden}
+.run header{display:flex;justify-content:space-between;padding:.7rem 1rem;border-bottom:1px solid var(--line);color:var(--muted)}
+.run ul{list-style:none;margin:0;padding:.5rem 0}
+.run li{display:flex;gap:.75rem;padding:.35rem 1rem;opacity:0;animation:in .3s forwards}
+.run li b{font-weight:500;min-width:3.2rem}
+.pass b{color:var(--pass)} .fail b{color:var(--fail)} .warn b{color:var(--warn)}
+.run footer{padding:.7rem 1rem;border-top:1px solid var(--line);color:var(--muted)}
+.run li:nth-child(1){animation-delay:.2s}.run li:nth-child(2){animation-delay:.6s}.run li:nth-child(3){animation-delay:1s}
+.run li:nth-child(4){animation-delay:1.4s}.run li:nth-child(5){animation-delay:1.8s}.run li:nth-child(6){animation-delay:2.2s}
+@keyframes in{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.25rem}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.25rem}
+.box p{margin:0;color:var(--muted);font-size:1rem}
+
+.projects{display:grid;gap:1.25rem}
+.proj{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--pass);border-radius:8px;padding:1.5rem}
+.proj .tag{font:500 .8rem "IBM Plex Mono",monospace;color:var(--muted);margin-bottom:.5rem}
+.proj p{color:var(--muted);margin-bottom:.5rem}
+.proj strong{color:var(--ink);font-weight:500}
+
+ol.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:0;counter-reset:s}
+ol.steps li{counter-increment:s;padding:1rem 1rem 1rem 0;border-top:3px solid var(--ink)}
+ol.steps li::before{content:counter(s);font:500 .9rem "IBM Plex Mono",monospace;color:var(--muted);display:block;margin-bottom:.25rem}
+ol.steps li span{display:block;color:var(--muted);font-size:.95rem;margin-top:.25rem}
+
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0;list-style:none}
+.chips li{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:.3rem .9rem;font-size:.95rem}
+
+footer.site{padding:3rem 0 4rem;border-top:1px solid var(--line);color:var(--muted)}
+footer.site a{color:var(--ink);font-weight:500}
+
+@media (max-width:760px){.hero{grid-template-columns:1fr;gap:2rem;padding-top:2rem}}
+@media (prefers-reduced-motion:reduce){.run li{animation:none;opacity:1}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="me" href="#top">Your Name</a>
+    <a href="#scope">What I test</a>
+    <a href="#projects">Projects</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <h1>I find what breaks before your users do.</h1>
+        <p class="lead">System Quality Assurance engineer with 8 years of experience testing web platforms, admin tools, scheduled jobs and third-party integrations, from test design to production verification.</p>
+        <div class="btns">
+          <a class="btn primary" href="#projects">See my work</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+
+      <div class="run" role="img" aria-label="Sample test run: five checks pass and one defect is caught before release">
+        <header><span>release-candidate / regression</span><span>run #8</span></header>
+        <ul>
+          <li class="pass"><b>PASS</b> Payout amounts match payroll</li>
+          <li class="pass"><b>PASS</b> SMS sent once per event</li>
+          <li class="fail"><b>FAIL</b> Duplicate job run after retry</li>
+          <li class="warn"><b>FIXED</b> Job runs once, verified</li>
+          <li class="pass"><b>PASS</b> Migrated records are complete</li>
+          <li class="pass"><b>PASS</b> Production smoke check</li>
+        </ul>
+        <footer>1 defect caught before release</footer>
+      </div>
+    </div>
+
+    <section id="scope">
+      <h2>What I test</h2>
+      <div class="grid">
+        <div class="box"><h3>Web platforms</h3><p>Online education and web applications used by real customers every day.</p></div>
+        <div class="box"><h3>Backend admin tools</h3><p>The internal screens teams rely on to run payroll, accounts and content.</p></div>
+        <div class="box"><h3>Scheduled jobs</h3><p>Background work that runs without anyone watching: timing, retries and data results.</p></div>
+        <div class="box"><h3>Third-party integrations</h3><p>Payments, payouts and messaging services, including what happens when they fail.</p></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <!-- Edit each project: add your own results, numbers and tools where you can share them. -->
+      <div class="projects">
+        <article class="proj">
+          <div class="tag">AI-based recruitment</div>
+          <h3>Testing AI-driven hiring features</h3>
+          <p><strong>Scope:</strong> Designed test cases for AI-assisted candidate workflows, covering expected results, edge cases and data accuracy.</p>
+          <p><strong>Result:</strong> [Add the outcome, for example defects found before release.]</p>
+        </article>
+        <article class="proj">
+          <div class="tag">Payment and payout integration</div>
+          <h3>Making sure money lands correctly</h3>
+          <p><strong>Scope:</strong> Verified payment and payout flows with third-party providers, including failed, repeated and partial transactions.</p>
+          <p><strong>Result:</strong> [Add the outcome.]</p>
+        </article>
+        <article class="proj">
+          <div class="tag">System migration</div>
+          <h3>Moving data and features without losing any</h3>
+          <p><strong>Scope:</strong> Planned and ran checks that migrated records and behaviour matched the old system, then verified in production after release.</p>
+          <p><strong>Result:</strong> [Add the outcome.]</p>
+        </article>
+        <article class="proj">
+          <div class="tag">SMS notifications</div>
+          <h3>Right message, right person, once</h3>
+          <p><strong>Scope:</strong> Tested triggers, content, timing and delivery of SMS notifications sent through an external provider.</p>
+          <p><strong>Result:</strong> [Add the outcome.]</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="process">
+      <h2>How I work</h2>
+      <p>I own quality for a release from the first requirement to the first day in production.</p>
+      <ol class="steps">
+        <li>Test design<span>Cases built from requirements and risk</span></li>
+        <li>Manual and automated testing<span>Exploration plus repeatable checks</span></li>
+        <li>UAT<span>Working with stakeholders to confirm it fits their needs</span></li>
+        <li>Release plan<span>Clear steps, owners and rollback options</span></li>
+        <li>Production verification<span>Confirming it works live</span></li>
+      </ol>
+    </section>
+
+    <section id="mentoring">
+      <h2>Mentoring</h2>
+      <p>I have trained new QA engineers in test automation, from writing their first reliable test to keeping a suite maintainable.</p>
+      <!-- Replace with the tools you actually use. -->
+      <ul class="chips" aria-label="Tools and skills">
+        <li>Test case design</li><li>Manual testing</li><li>Test automation</li><li>UAT</li><li>Release planning</li><li>API and integration testing</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site" id="contact">
+    <h2>Contact</h2>
+    <p>Looking for someone to own quality on your team? Email me at <a href="mailto:you@example.com">you@example.com</a>, or find me on <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a> and <a href="https://github.com/your-username">GitHub</a>.</p>
+  </footer>
+</div>
+</body>
+</html>
